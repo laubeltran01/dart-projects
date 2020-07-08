@@ -1,5 +1,10 @@
+import 'dart:io';
+
 void main() {
-  int age = 17;
+  print ("Please enter your age: ");
+  var strAge = stdin.readLineSync();
+  
+  int age = int.parse(strAge);
   
   if(age > 21) {
     print('Citizen');

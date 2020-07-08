@@ -1,30 +1,19 @@
 import 'dart:math';
 
 void main() {
+
+ var dayOfWeek = {
+    0: 'Monday',
+    1: 'Tuesday', 
+    2: 'Wednesday',
+    3: 'Thursday',
+    4: 'Friday',
+    5: 'Saturday',
+    6: 'Sunday'
+  };
+	
   Random rnd = new Random();
-  int dayOfWeek = rnd.nextInt(6);
+  int selectedDay = rnd.nextInt(7);
   
-  switch(dayOfWeek){
-    case 0:
-      print('Sunday');
-      break;
-    case 1:
-      print('Monday');
-      break;  
-    case 2:
-      print('Tuesday');
-      break;
-    case 3:
-      print('Wednesday');
-      break;
-    case 4:
-      print('Thursday');
-      break; 
-    case 5:
-      print('Friday');
-      break;
-    case 6:
-      print('Saturday');
-      break;
-  }
+  print(dayOfWeek[selectedDay]);
 }
