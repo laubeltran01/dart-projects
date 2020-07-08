@@ -33,25 +33,25 @@ void mapAge(int age)
 void validateNumber(int number){
   stdout.write("$number - ");
   switch (number){
-    case 0: 
+    case 1: 
       stdout.writeln('Monday');
       break;
-      case 1: 
+      case 2: 
       stdout.writeln('Tuesday');
       break;
-      case 2: 
+      case 3: 
       stdout.writeln('Wednesday');
       break;
-      case 3: 
+      case 4: 
       stdout.writeln('Thursday');
       break;
-      case 4: 
+      case 5: 
       stdout.writeln('Friday');
       break;
-      case 5: 
+      case 6: 
       stdout.writeln('Saturday');
       break;
-      case 6: 
+      case 0: 
       stdout.writeln('Sunday');
       break;
       default:
