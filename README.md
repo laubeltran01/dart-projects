@@ -1,5 +1,36 @@
 # dart-projects
 
+# Calculator
+
+Write a calculator that performs the four basic arithmetic operations:
+
+- Addition
+- Substraction
+- Multiplication
+- Division
+
+For example,
+
+```dart
+calculator.add(2, 5) === 7;
+calculator.subtract(5, 3) === 2;
+calculator.multiply(5, 6) === 30;
+calculator.divide(12, 4) === 3;
+```
+
+## Bonus
+Add the _exponential_ function to the calculator. For example
+```dart
+calculator.expontentiate(2, 6) === 32
+```
+
+## Recommended Practices
+- Use types
+- Use classes
+- Documentation
+- Add unit testing
+
+
 # Excercise 1
 
   Create a dart program that:
@@ -42,4 +73,6 @@ Implement control-flow seen in the session
 ## Recommended Practices
 - Use types
 - Documentation
+
+
 
