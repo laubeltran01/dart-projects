@@ -32,16 +32,10 @@ class Calculator {
       throw Exception("exponent cannot be less than 0");
     }
     var count = 1;
-    for (int i in range(b)) {
+    // Generates list of b elements to iterate through them.
+    for (int i in Iterable.generate(b)) {
       count *= a;
     }
     return count;
   }
-}
-
-// aux range function for pretty for loops
-range(int stop, {int start: 0, int step: 1}){
-  return start < stop == step > 0
-      ? List<int>.generate(((start-stop)/step).abs().ceil(), (int i) => start + (i * step))
-      : [];
 }
