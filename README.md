@@ -1,6 +1,6 @@
 # dart-projects
 
-# Excercise 1
+# Exercise 1
 
   Create a dart program that:
       If you are 21 years of age or older, show the word "citizen"
@@ -20,7 +20,7 @@ Implement control-flow seen in the session
 - Documentation
 
 
-# Excercise 2
+# Exercise 2
 
   Select a random number up to 7, depending on the
   selected number is printed on the console the day of the week to which
