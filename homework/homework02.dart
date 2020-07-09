@@ -31,7 +31,7 @@ class Calculator {
     if(b < 0) {
       throw Exception("exponent cannot be less than 0");
     }
-    var count = 1;
+    int count = 1;
     // Generates list of b elements to iterate through them.
     for (int i in Iterable.generate(b)) {
       count *= a;
