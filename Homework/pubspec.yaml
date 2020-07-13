@@ -1,0 +1,3 @@
+name: newtify
+dev_dependencies:
+  test: ^1.15.2
