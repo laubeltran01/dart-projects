@@ -16,7 +16,8 @@ final rand = Random();
   print('Executed successfully');
 
   final number = rand.nextInt(7);
-  print('The number was $number, corresponding with day ${transformer(n)}')
+  print('The number was $number, corresponding with day ${transformer(number)
+  }');
 
 
 }
