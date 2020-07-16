@@ -1,0 +1,4 @@
+name: calculator
+version: 1.0.0
+dev_dependencies:
+  test: ^1.15.3
