@@ -1,0 +1,4 @@
+Create database "Movies"
+create user movies_user with createdb;
+alter user movies_user with password 'Movies123';
+grant all on database "Movies" to movies_user;
