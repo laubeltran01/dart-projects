@@ -55,4 +55,79 @@ Future main() async {
       expect(postResponse.statusCode, 400);
     });
   });
+
+  group("Delete: ", () {
+    test("DELETE /movies/1 return 'Deleted 0 movie(s)' for empty db", () async {
+      final response = await harness.agent.delete('/movies/1');
+      expectResponse(response, 200, body: {'message': "Deleted 0 movie(s)"});
+    });
+
+    test("DELETE /movies/id return 200 OK row deleted", () async {
+      final postResponse = await harness.agent.post('/movies', body: {
+        'title': '${title}del',
+        'author': '${author}del',
+        'year': year + 2
+      });
+      final id = postResponse.body.as<Map>()['id'];
+      final response = await harness.agent.delete('movies/$id');
+      expect(response.statusCode, 200);
+    });
+  });
+
+  group("PUT: ", () {
+    test("PUT /movies return 200 OK for body with valid keys", () async {
+      final postResponse = await harness.agent.post('/movies', body: {
+        'title': '${title}putpost',
+        'author': '${author}putpost',
+        'year': year
+      });
+      final id = postResponse.body.as<Map>()['id'];
+      final putResponse = await harness.agent.put('/movies/$id', body: {
+        'title': '${title}put',
+        'author': '${author}put',
+        'year': year + 3
+      });
+      expectResponse(putResponse, 200, body: {
+        'id': id,
+        'title': '${title}put',
+        'author': '${author}put',
+        'year': year + 3
+      });
+    });
+
+    test("PUT /movies/id return 400 bad Request for wrong body", () async {
+      final postResponse = await harness.agent.put('/movies/1',
+          body: {'tTest': title, 'aTest': author, 'yTest': year});
+      expect(postResponse.statusCode, 400);
+    });
+  });
+
+  group("PATCH: ", () {
+    test("PATCH /movies return 200 OK for body with valid keys", () async {
+      final postResponse = await harness.agent.post('/movies', body: {
+        'title': '${title}patchpost',
+        'author': '${author}patchpost',
+        'year': year
+      });
+      final id = postResponse.body.as<Map>()['id'];
+      final putResponse = await harness.agent.execute('PATCH', '/movies/$id',
+          body: {
+            'title': '${title}patch',
+            'author': '${author}patch',
+            'year': year + 3
+          });
+      expectResponse(putResponse, 200, body: {
+        'id': id,
+        'title': '${title}patch',
+        'author': '${author}patch',
+        'year': year + 3
+      });
+    });
+
+    test("PATCH /movies/id return 400 bad Request for wrong body", () async {
+      final postResponse = await harness.agent.execute('PATCH', '/movies/1',
+          body: {'tTest': title, 'aTest': author, 'yTest': year});
+      expect(postResponse.statusCode, 400);
+    });
+  });
 }
