@@ -15,12 +15,12 @@ NOTE: Field "director" was used instead of author for movies
 It's possible to use the following RestAPI requests (tested with Postman) in movies_api:
 
 #### GET all movies
-Shows all movies existing in the DB
-		[GET]http://localhost:8888/movies_api
+Shows all movies existing in the DB.  
+		[GET] http://localhost:8888/movies_api
 
 #### GET a movie by ID
-Returns the movie with the ID specified in the URL
-[GET]http://localhost:8888/movies_api/id
+Returns the movie with the ID specified in the URL.  
+[GET] http://localhost:8888/movies_api/id
 
 #### POST a movie
 Inserts a new movie into the DB. Json format is required. ID is assigned automatically.
@@ -31,11 +31,11 @@ Inserts a new movie into the DB. Json format is required. ID is assigned automat
         "year": 1
     }
 
-[POST]http://localhost:8888/movies_api
+[POST] http://localhost:8888/movies_api
 
 #### DELETE a movie
-An existing movie is deleted from DB specifying the ID of the movie to delete in the URL.
-[DELETE]http://localhost:8888/movies_api/id
+An existing movie is deleted from DB specifying the ID of the movie to delete in the URL.  
+[DELETE] http://localhost:8888/movies_api/id
 
 #### PUT a movie
 Updates an existing  movie in the DB specifying the ID of the movie to update in the URL. Json format is required (title, director or year fields can be updated separately)
@@ -46,7 +46,7 @@ Updates an existing  movie in the DB specifying the ID of the movie to update in
         "year": 1
     }
 
-[PUT]http://localhost:8888/movies_api/id
+[PUT] http://localhost:8888/movies_api/id
 
 ## Running the Application Locally
 
