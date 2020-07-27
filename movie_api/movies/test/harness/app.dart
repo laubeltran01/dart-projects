@@ -1,3 +1,4 @@
+import 'package:movies/model/movie_model.dart';
 import 'package:movies/movies.dart';
 import 'package:aqueduct_test/aqueduct_test.dart';
 
@@ -19,14 +20,15 @@ export 'package:aqueduct/aqueduct.dart';
 ///           });
 ///         }
 ///
-class Harness extends TestHarness<MoviesChannel> {
+class Harness extends TestHarness<MoviesChannel> with TestHarnessORMMixin {
   @override
   Future onSetUp() async {
-
+    await resetData();
   }
 
   @override
-  Future onTearDown() async {
+  Future onTearDown() async {}
 
-  }
+  @override
+  ManagedContext get context => channel.context;
 }

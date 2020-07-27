@@ -1,0 +1,6 @@
+database:
+  host: localhost
+  port: 5432
+  username: movies_user_test
+  password: M0vies.T3st
+  databaseName: movies_test
