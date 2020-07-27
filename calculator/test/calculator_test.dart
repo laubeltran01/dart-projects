@@ -24,5 +24,5 @@ void main() {
   test('Check power funtion', () {
     var actual = calculator.power(3, 3);
     expect(actual, 27);
-    });
+  });
 }
